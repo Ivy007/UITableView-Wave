@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9633779319075DDD000540BA /* UITableView+Wave.m in Sources */ = {isa = PBXBuildFile; fileRef = 9633779219075DDD000540BA /* UITableView+Wave.m */; };
+		96B564B51907DE9D007F0C94 /* UITableView+Wave.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B564B41907DE9D007F0C94 /* UITableView+Wave.m */; };
 		BB1951B818B14ADC001CCEFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1951B718B14ADC001CCEFD /* Foundation.framework */; };
 		BB1951BA18B14ADC001CCEFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1951B918B14ADC001CCEFD /* CoreGraphics.framework */; };
 		BB1951BC18B14ADC001CCEFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1951BB18B14ADC001CCEFD /* UIKit.framework */; };
@@ -35,8 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9633779119075DDD000540BA /* UITableView+Wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+Wave.h"; path = "wave/UITableView+Wave.h"; sourceTree = "<group>"; };
-		9633779219075DDD000540BA /* UITableView+Wave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+Wave.m"; path = "wave/UITableView+Wave.m"; sourceTree = "<group>"; };
+		96B564B31907DE9D007F0C94 /* UITableView+Wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Wave.h"; sourceTree = "<group>"; };
+		96B564B41907DE9D007F0C94 /* UITableView+Wave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Wave.m"; sourceTree = "<group>"; };
 		BB1951B418B14ADC001CCEFD /* TableViewWaveDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewWaveDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1951B718B14ADC001CCEFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB1951B918B14ADC001CCEFD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,9 +82,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96B564B21907DE9D007F0C94 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				96B564B31907DE9D007F0C94 /* UITableView+Wave.h */,
+				96B564B41907DE9D007F0C94 /* UITableView+Wave.m */,
+			);
+			path = Wave;
+			sourceTree = "<group>";
+		};
 		BB1951AB18B14ADC001CCEFD = {
 			isa = PBXGroup;
 			children = (
+				96B564B21907DE9D007F0C94 /* Wave */,
 				BB1951BD18B14ADC001CCEFD /* TableViewWaveDemo */,
 				BB1951DF18B14ADC001CCEFD /* TableViewWaveDemoTests */,
 				BB1951B618B14ADC001CCEFD /* Frameworks */,
@@ -122,10 +132,7 @@
 				BB1951D018B14ADC001CCEFD /* ViewController.m */,
 				BB1951D218B14ADC001CCEFD /* Images.xcassets */,
 				BB1951BE18B14ADC001CCEFD /* Supporting Files */,
-				9633779119075DDD000540BA /* UITableView+Wave.h */,
-				9633779219075DDD000540BA /* UITableView+Wave.m */,
 			);
-			name = TableViewWaveDemo;
 			path = TableViewWaveDemo;
 			sourceTree = "<group>";
 		};
@@ -146,7 +153,6 @@
 				BB1951E518B14ADC001CCEFD /* TableViewWaveDemoTests.m */,
 				BB1951E018B14ADC001CCEFD /* Supporting Files */,
 			);
-			name = TableViewWaveDemoTests;
 			path = TableViewWaveDemoTests;
 			sourceTree = "<group>";
 		};
@@ -256,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B564B51907DE9D007F0C94 /* UITableView+Wave.m in Sources */,
 				BB1951D118B14ADC001CCEFD /* ViewController.m in Sources */,
 				BB1951C818B14ADC001CCEFD /* AppDelegate.m in Sources */,
-				9633779319075DDD000540BA /* UITableView+Wave.m in Sources */,
 				BB1951C418B14ADC001CCEFD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
