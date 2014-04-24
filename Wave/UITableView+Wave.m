@@ -13,7 +13,7 @@
 
 - (void)reloadDataAnimateWithWave:(WaveAnimation)animation;
 {
-    
+    [self setContentOffset:self.contentOffset animated:NO];
     [UIView animateWithDuration:.2 animations:^{
         [self setHidden:YES];
         [self reloadData];
