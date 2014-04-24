@@ -27,7 +27,14 @@
 
 - (void)visibleRowsBeginAnimation:(WaveAnimation)animation
 {
+    //连续点击问题修复：cell复位已经确保之前动画被取消
     NSArray *array = [self indexPathsForVisibleRows];
+    for (NSIndexPath *path in array) {
+        UITableViewCell *cell = [self cellForRowAtIndexPath:path];
+        cell.center =CGPointMake(self.frame.size.width/2, cell.center.y);
+    }
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    
     for (int i=0 ; i < [array count]; i++) {
         NSIndexPath *path = [array objectAtIndex:i];
         UITableViewCell *cell = [self cellForRowAtIndexPath:path];
