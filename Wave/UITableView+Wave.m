@@ -13,32 +13,33 @@
 
 - (void)reloadDataAnimateWithWave:(WaveAnimation)animation;
 {
+    //连续点击问题修复：cell复位已经确保之前动画被取消
+    [[self class] cancelPreviousPerformRequestsWithTarget:self];
     [self setContentOffset:self.contentOffset animated:NO];
-    [UIView animateWithDuration:.2 animations:^{
+    [UIView  transitionWithView:self
+                       duration:.2
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
         [self setHidden:YES];
         [self reloadData];
     } completion:^(BOOL finished) {
-        //Do something after that...
-        [self setHidden:NO];
-        [self visibleRowsBeginAnimation:animation];
+        if(finished){
+         [self setHidden:NO];
+         [self visibleRowsBeginAnimation:animation];
+        }
     }];
 }
 
 
 - (void)visibleRowsBeginAnimation:(WaveAnimation)animation
 {
-    //连续点击问题修复：cell复位已经确保之前动画被取消
     NSArray *array = [self indexPathsForVisibleRows];
-    for (NSIndexPath *path in array) {
-        UITableViewCell *cell = [self cellForRowAtIndexPath:path];
-        cell.center =CGPointMake(self.frame.size.width/2, cell.center.y);
-    }
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    
     for (int i=0 ; i < [array count]; i++) {
         NSIndexPath *path = [array objectAtIndex:i];
         UITableViewCell *cell = [self cellForRowAtIndexPath:path];
+        cell.frame = [self rectForRowAtIndexPath:path];
         cell.hidden = YES;
+        [cell.layer removeAllAnimations];
         NSArray *array = @[path,[NSNumber numberWithInt:animation]];
         [self performSelector:@selector(animationStart:) withObject:array afterDelay:.1*(i+1)];
         
