@@ -1,14 +1,6 @@
-//
-//  UITableView+Wave.h
-//  TableViewWaveDemo
-//
-//  Created by jason on 14-4-23.
-//  Copyright (c) 2014年 taobao All rights reserved.
-//
+#define kBOUNCE_DISTANCE  4.f
+#define kWAVE_DURATION   .5f
 
-#import <UIKit/UIKit.h>
-
-#define kBOUNCE_DISTANCE  2
 
 typedef NS_ENUM(NSInteger,WaveAnimation) {
     LeftToRightWaveAnimation = -1,
@@ -19,6 +11,5 @@ typedef NS_ENUM(NSInteger,WaveAnimation) {
 @interface UITableView (Wave)
 
 - (void)reloadDataAnimateWithWave:(WaveAnimation)animation;
-
 
 @end
